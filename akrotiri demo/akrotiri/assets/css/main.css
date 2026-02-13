@@ -1,148 +1,133 @@
 /* header.css */
+
 /* ==========================================================================
-   MOBILE OPTIMIZATION (For screens smaller than 768px)
+   UPDATED MOBILE OPTIMIZATION (For screens smaller than 768px)
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* 1. Typography & General Layout */
+    /* 1. Global Reset for Mobile */
     body {
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    .hero-title {
-        font-size: 2.4rem !important;
-        line-height: 1.1;
-        padding: 0 15px;
-    }
-
-    .hero-sub {
-        font-size: 1rem !important;
-        padding: 0 20px;
+        overflow-x: hidden; /* Stops the side-to-side shaking seen in the video */
+        width: 100%;
     }
 
     .section {
-        padding: 60px 20px !important;
+        padding: 40px 15px !important;
     }
 
-    /* 2. About Blocks: Stack Image and Text */
+    /* 2. Hero Section Scaling */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding-top: 100px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important; /* Smaller, readable title */
+        line-height: 1.2;
+        padding: 0 10px;
+    }
+
+    .hero-sub {
+        font-size: 1.1rem !important;
+        margin-top: 15px;
+    }
+
+    /* 3. About Blocks: Fixing the "Squashed" look */
     .about-block {
-        flex-direction: column !important; /* Stack vertically */
-        text-align: left;
-        gap: 30px;
-    }
-
-    /* Ensure images take full width and appear above/below text naturally */
-    .about-block.right-image, 
-    .about-block.left-image {
-        flex-direction: column !important;
+        flex-direction: column !important; /* Force stack regardless of left/right class */
+        padding: 20px !important;
+        gap: 20px;
+        margin: 20px 0;
     }
 
     .about-block .text, 
     .about-block .image {
         width: 100% !important;
-        padding: 0 !important;
+        order: unset !important; /* Ensure text/image order is logical */
     }
 
-    .about-block .image img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+    .about-block .image {
+        height: 250px; /* Give images a consistent height on mobile */
     }
 
-    /* 3. Innovation Section: Grid adjustments */
+    /* 4. Innovation Mosaic (Tiles) */
     .innovate-hero {
-        grid-template-columns: 1fr !important; /* Single column */
+        grid-template-columns: 1fr !important;
+        padding: 10px;
     }
 
     .mosaic {
-        grid-template-columns: 1fr !important; /* Single column for tiles */
-        gap: 15px;
+        grid-template-columns: 1fr !important; /* One tile per row */
+        padding: 10px;
     }
 
-    .grid {
-        grid-template-columns: 1fr !important;
-        display: flex;
-        flex-direction: column;
+    .tile {
+        min-height: auto;
+        padding: 20px;
     }
 
-    .card.wide, .card.feature {
-        grid-column: span 1 !important;
-    }
-
-    /* 4. The Akrotiri Standard Section */
+    /* 5. The Akrotiri Standard (Cards) */
     #stand .grid {
+        grid-template-columns: 1fr !important; /* One card per row */
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        max-width: 100%;
     }
 
-    /* 5. Gallery */
-    .gallery {
-        grid-template-columns: 1fr !important;
-        padding: 0 10px;
+    .card {
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 15px;
     }
 
-    /* 6. Contact Section Stacking */
+    /* 6. Contact Section */
     .contact-main {
+        display: flex;
         flex-direction: column !important;
-        padding: 20px !important;
+        gap: 30px;
     }
 
     .contact-left, .contact-right {
         width: 100% !important;
-        margin-bottom: 40px;
     }
 
-    .form-box, .contact-box {
+    .contact-box, .form-box {
         padding: 20px;
+        border-radius: 20px; /* Softer corners for mobile */
     }
 
-    iframe {
-        height: 250px; /* Make map smaller on mobile */
+    /* 7. Gallery Grid */
+    .gallery {
+        grid-template-columns: 1fr !important; /* Single column for high-quality view */
+        padding: 20px;
+        gap: 20px;
     }
 
-    /* 7. Hide desktop-only features */
-    .cursor-dot {
-        display: none !important; /* Custom cursors don't work on touch */
-    }
-
-    .floating-bg {
-        opacity: 0.3; /* Reduce intensity of floating images for clarity */
-    }
-
-    /* 8. Navigation Toggle (The Hamburger) */
-    /* Adjust these classes based on your header.html structure */
+    /* 8. Fix the Mobile Navigation Menu */
     .nav-toggle {
         display: block !important;
-        position: relative;
-        z-index: 1001;
+        right: 15px;
+        top: 30px;
     }
 
     .nav-and-search {
         position: fixed;
         top: 0;
-        right: -100%; /* Slide out of view */
-        width: 80%;
+        right: -100%;
+        width: 85%;
         height: 100vh;
-        background: #fff; /* Match your brand background */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: 0.4s ease-in-out;
-        z-index: 1000;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        background: #fdf8e0; /* Match your body color */
+        padding: 80px 20px;
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex !important; /* Force flex when active */
     }
 
     .nav-and-search.active {
-        right: 0; /* Slide into view */
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 25px;
-        text-align: center;
+        right: 0;
     }
 }
+
 :root {
     --bg-color: #fcf2d9;
     --text-color: #5d4037;

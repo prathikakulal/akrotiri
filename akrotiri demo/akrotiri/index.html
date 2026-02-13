@@ -1077,6 +1077,33 @@ lightbox.addEventListener('click', e => {
 </script>
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Delegated event listener for the mobile menu toggle
+            document.addEventListener("click", function (e) {
+                const toggle = e.target.closest(".nav-toggle");
+                const navWrapper = document.querySelector(".nav-and-search");
+
+                if (toggle && navWrapper) {
+                    navWrapper.classList.toggle("active");
+                    console.log("Mobile Menu Toggled");
+                }
+
+                // Close menu when clicking on a navigation link
+                if (e.target.closest(".nav-links a") && navWrapper) {
+                    navWrapper.classList.remove("active");
+                }
+            });
+
+            // Hide the Custom Cursor on mobile devices to prevent lag
+            if (window.innerWidth < 768) {
+                const dot = document.querySelector(".cursor-dot");
+                if (dot) dot.style.display = 'none';
+            }
+        });
+    </script>
+
+
 
 
 </body>
