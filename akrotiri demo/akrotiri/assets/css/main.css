@@ -364,38 +364,53 @@ body {
 
 /* Custom Cursor Style */
 
+/* Custom Cursor Style */
+
 .cursor-dot {
     width: 8px;
     height: 8px;
     background-color: var(--accent-color);
-    /* Saffron gold dot */
     border-radius: 50%;
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
-    /* Crucial: allows clicking through the dot */
     z-index: 9999;
     transform: translate(-50%, -50%);
-    /* Centers the dot on the cursor tip */
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-    /* Smooth scaling */
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, box-shadow 0.3s ease, transform 0.15s ease;
 }
 
 
-/* Hide the default cursor for a cleaner museum feel */
-
-
-/* Make the dot grow when hovering over links or buttons */
+/* Glow when hovering */
 
 .cursor-hover {
     width: 25px;
     height: 25px;
-    background-color: rgba(176, 129, 23, 0.3);
-    /* Transparent saffron */
+    background-color: rgba(176, 129, 23, 0.2);
     border: 1px solid var(--accent-color);
+    box-shadow: 0 0 8px rgba(176, 129, 23, 0.6), 0 0 18px rgba(176, 129, 23, 0.4), 0 0 30px rgba(176, 129, 23, 0.3);
 }
 
+
+/* Strong glow when clicking */
+
+.cursor-click {
+    transform: translate(-50%, -50%) scale(1.8);
+    box-shadow: 0 0 12px rgba(176, 129, 23, 0.9), 0 0 30px rgba(176, 129, 23, 0.7), 0 0 60px rgba(176, 129, 23, 0.5);
+}
+
+
+/* Disable custom cursor on touch devices */
+
+@media (hover: none),
+(pointer: coarse) {
+    .cursor-dot {
+        display: none !important;
+    }
+    body {
+        cursor: auto !important;
+    }
+}
 
 /* Home.css */
 
@@ -2616,4 +2631,85 @@ textarea {
     cursor: pointer;
     touch-action: manipulation;
   }
+}
+
+
+.kicker,
+.badge,
+.tag,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Make icon a perfect circle container */
+.kicker i,
+.badge i,
+.tag i,
+.btn i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    background: rgba(198,122,20,0.08); /* soft saffron tint */
+    color: var(--accent);
+
+    transition: all 0.3s ease;
+}
+
+/* ===============================
+   GLOBAL ICON CIRCLE STYLE
+================================= */
+
+.kicker,
+.badge,
+.tag,
+.btn,
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Circle container (applies to all icons) */
+.kicker i,
+.badge i,
+.tag i,
+.btn i,
+.pill .mini {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+    font-size: 13px;
+
+    background: rgba(198,122,20,0.08); /* same soft saffron */
+    color: var(--accent);
+
+    transition: all 0.3s ease;
+}
+
+/* Hover glow (same for all) */
+.kicker:hover i,
+.badge:hover i,
+.tag:hover i,
+.btn:hover i,
+.pill:hover .mini {
+    background: var(--accent);
+    color: white;
+
+    box-shadow:
+        0 0 6px var(--accent),
+        0 0 14px rgba(198,122,20,0.6);
 }
