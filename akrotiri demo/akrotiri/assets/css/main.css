@@ -2581,3 +2581,40 @@ textarea {
   }
 
 }
+
+
+
+/* ============================
+   MOBILE NAVBAR FIX
+============================ */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .nav-and-search {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #faf2dd;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-and-search.active {
+    max-height: 400px; /* enough for menu */
+  }
+
+  .nav-toggle {
+    z-index: 10000;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+}
