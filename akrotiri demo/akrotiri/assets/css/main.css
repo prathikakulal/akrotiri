@@ -2713,3 +2713,68 @@ textarea {
         0 0 6px var(--accent),
         0 0 14px rgba(198,122,20,0.6);
 }
+
+
+
+
+/* =====================================
+   FULL-WIDTH BIG BOXES ON MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* Remove container limits */
+  #innovate .wrap {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #innovate .section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Make grids full width */
+  #innovate .grid {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Make cards full width */
+  #innovate .card {
+    width: 100% !important;
+    border-radius: 22px;
+    margin: 0 12px; /* small breathing space */
+  }
+
+  /* Increase card content size */
+  #innovate .cardBody {
+    padding: 28px 22px !important;
+  }
+
+  /* Bigger text inside cards */
+  #innovate .h2 {
+    font-size: 22px;
+  }
+
+  #innovate .lead {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* Bigger pills */
+  #innovate .pill {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  /* Bigger metrics / steps */
+  #innovate .metric,
+  #innovate .step,
+  #innovate .miniCard {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+}

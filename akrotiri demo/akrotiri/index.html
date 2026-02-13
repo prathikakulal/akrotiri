@@ -1279,6 +1279,26 @@ fetch("header.html")
 </script>
 
 
+<script>
+        document.addEventListener("click", function (e) {
+            const link = e.target.closest('a[href^="#"]');
+            if (!link) return;
+
+            const targetId = link.getAttribute("href");
+            if (targetId.length <= 1) return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const navbar = document.querySelector(".navbar");
+            const headerOffset = navbar ? navbar.offsetHeight : 80;
+            const targetPosition = target.offsetTop - headerOffset;
+
+            slowSmoothScroll(targetPosition, 1800); // change 1800 to control speed
+        });
+    </script>
 
 </body>
 
