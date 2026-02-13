@@ -1,5 +1,148 @@
 /* header.css */
+/* ==========================================================================
+   MOBILE OPTIMIZATION (For screens smaller than 768px)
+   ========================================================================== */
 
+@media (max-width: 768px) {
+    /* 1. Typography & General Layout */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .hero-title {
+        font-size: 2.4rem !important;
+        line-height: 1.1;
+        padding: 0 15px;
+    }
+
+    .hero-sub {
+        font-size: 1rem !important;
+        padding: 0 20px;
+    }
+
+    .section {
+        padding: 60px 20px !important;
+    }
+
+    /* 2. About Blocks: Stack Image and Text */
+    .about-block {
+        flex-direction: column !important; /* Stack vertically */
+        text-align: left;
+        gap: 30px;
+    }
+
+    /* Ensure images take full width and appear above/below text naturally */
+    .about-block.right-image, 
+    .about-block.left-image {
+        flex-direction: column !important;
+    }
+
+    .about-block .text, 
+    .about-block .image {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .about-block .image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* 3. Innovation Section: Grid adjustments */
+    .innovate-hero {
+        grid-template-columns: 1fr !important; /* Single column */
+    }
+
+    .mosaic {
+        grid-template-columns: 1fr !important; /* Single column for tiles */
+        gap: 15px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card.wide, .card.feature {
+        grid-column: span 1 !important;
+    }
+
+    /* 4. The Akrotiri Standard Section */
+    #stand .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 5. Gallery */
+    .gallery {
+        grid-template-columns: 1fr !important;
+        padding: 0 10px;
+    }
+
+    /* 6. Contact Section Stacking */
+    .contact-main {
+        flex-direction: column !important;
+        padding: 20px !important;
+    }
+
+    .contact-left, .contact-right {
+        width: 100% !important;
+        margin-bottom: 40px;
+    }
+
+    .form-box, .contact-box {
+        padding: 20px;
+    }
+
+    iframe {
+        height: 250px; /* Make map smaller on mobile */
+    }
+
+    /* 7. Hide desktop-only features */
+    .cursor-dot {
+        display: none !important; /* Custom cursors don't work on touch */
+    }
+
+    .floating-bg {
+        opacity: 0.3; /* Reduce intensity of floating images for clarity */
+    }
+
+    /* 8. Navigation Toggle (The Hamburger) */
+    /* Adjust these classes based on your header.html structure */
+    .nav-toggle {
+        display: block !important;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .nav-and-search {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Slide out of view */
+        width: 80%;
+        height: 100vh;
+        background: #fff; /* Match your brand background */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    }
+
+    .nav-and-search.active {
+        right: 0; /* Slide into view */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+}
 :root {
     --bg-color: #fcf2d9;
     --text-color: #5d4037;
