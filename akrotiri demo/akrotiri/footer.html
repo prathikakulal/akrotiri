@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akrotiri</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .site-footer {
+      background: #2b2b2b;
+      color: #d6c9b2;
+      padding: 80px 20px 30px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+    }
+
+    /* Grid layout */
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+/* Brand column */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.footer-text {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 300px;
+}
+
+/* Explore + Follow columns */
+.footer-explore,
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 18px;
+}
+
+.footer-explore h4,
+.footer-column h4 {
+  font-size: 25px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.footer-explore p {
+  font-size: 16px;
+}
+
+.site-footer a {
+  color: #d6c9b2;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.site-footer a:hover {
+  color: #c89b5c;
+}
+
+/* Social icons */
+.social-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  font-size: 25px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 60px;
+  opacity: 0.8;
+}
+
+/* NAV ROW */
+.footer-nav {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.footer-nav a {
+  color: #d6c9b2;
+  text-decoration: none;
+  margin: 5px 10px;
+  font-size: 18px;
+}
+
+.footer-nav a:hover {
+  color: #c89b5c;
+}
+
+.footer-nav span {
+  opacity: 0.8;
+}
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(214, 201, 178, 0.4);
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+/* Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-explore,
+  .footer-column {
+    align-items: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-nav span {
+    display: none;
+  }
+
+  .footer-nav a {
+    display: inline-block;
+    margin: 6px 10px;
+  }
+}
+
+</style>
+
+</head>
+<body>
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="#" aria-label="Go to Home"><img src="./assets/img/logo.png" alt="Akrotiri logo" class="footer-logo-img" width="300" height="100"></a>
+        <p class="footer-text">
+          Cultivated with patience, restraint, and respect for time.
+        </p>
+      </div>
+
+      <!-- Explore -->
+      <div class="footer-explore">
+        <h4>Marketing Office</h4>
+        <p>
+          PANAMA HOUSE, Door No 1-24/1,<br>
+          Kuloor-Kavoor Airport Road,<br>
+          Viveknagar, Mangalore - 575013,<br>
+          Karnataka, India
+          <br><br>
+          <a href="tel:+918105309944">+91 810 530 9944</a>
+        </p>
+      </div>
+
+      <!-- Social --> 
+      <div class="footer-column">
+        <h4>Follow</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="footer-nav">
+      <a href="#home">Home</a><span>|</span>
+      <a href="#about">About</a><span>|</span>
+      <a href="#gallery">Gallery</a><span>|</span>
+      <a href="#innovate">Innovation</a><span>|</span>
+      <a href="#stand">Standard</a><span>|</span>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <hr class="footer-divider">
+
+    <div class="footer-bottom">
+      © 2026 Akrotiri. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

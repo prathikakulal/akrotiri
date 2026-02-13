@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://unpkg.com/@phosphor-icons/web"></script> -->
+     <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
+    <title>Akrotiri Header</title>
+    
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="./assets/img/logo.png" alt="Akrotiri Logo" class="logo">
+        </div>
+
+        <div class="nav-right">
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+            </button>
+
+            <!-- <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search..." class="search-input">
+                <label for="search-input" class="search-icon" >
+                <i class="ph ph-magnifying-glass"></i>
+            </label>
+            </div> -->
+         </div>
+        <div class="nav-and-search">
+            <nav class="nav-links">
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#gallery">GALLERY</a>
+                <a href="#innovate">INNOVATION</a>
+                <a href="#stand">STANDARD</a>
+
+                <a href="#contact">CONTACT</a>
+            </nav>
+            
+
+            </div>
+        </div>
+    </header>
+
+    <script>
+        function toggleSearch() {
+            const input = document.getElementById('search-input');
+            input.classList.toggle('active');
+            if (input.classList.contains('active')) {
+                input.focus();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
