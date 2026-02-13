@@ -933,10 +933,9 @@ function smoothScrollAdaptive(targetPosition) {
                     headerObserver.observe(navbar);
 
                     scrollBtn.addEventListener("click", () => {
-                        navbar.scrollIntoView({
-                            behavior: "smooth"
-                        });
+                        slowSmoothScroll(0, 2000);
                     });
+                
                 }
 
                 document.querySelectorAll(".nav-links a").forEach(link => {
