@@ -2724,13 +2724,13 @@ textarea {
 
   /* Small screen padding */
   #innovate .wrap {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
   }
 
   #innovate .section {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
   }
 
   /* Ensure cards never touch edge */
