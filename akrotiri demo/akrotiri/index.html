@@ -1279,7 +1279,7 @@ fetch("header.html")
 </script>
 
 
-<script>
+<!-- <script>
         document.addEventListener("click", function (e) {
             const link = e.target.closest('a[href^="#"]');
             if (!link) return;
@@ -1298,8 +1298,33 @@ fetch("header.html")
 
             slowSmoothScroll(targetPosition, 1800); // change 1800 to control speed
         });
-    </script>
+    </script> -->
 
+
+    <script>
+        function slowSmoothScroll(targetPosition, duration) {
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+
+                const timeElapsed = currentTime - startTime;
+                const progress = timeElapsed / duration;
+
+                window.scrollTo(0, startPosition + distance * progress);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                } else {
+                    window.scrollTo(0, targetPosition);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+    </script>
 </body>
 
 </html>
