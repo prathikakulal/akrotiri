@@ -1103,6 +1103,41 @@ lightbox.addEventListener('click', e => {
         });
     </script>
 
+    <script>
+fetch("header.html")
+  .then(res => res.text())
+  .then(data => {
+
+    document.getElementById("header-placeholder").innerHTML = data;
+
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav-and-search");
+    const links = document.querySelectorAll(".nav-links a");
+
+    if (!toggle || !nav) return;
+
+    /* Open / Close Menu */
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      nav.classList.toggle("active");
+    });
+
+    /* Close on link click */
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+
+    /* Close when clicking outside */
+    document.addEventListener("click", function (e) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove("active");
+      }
+    });
+
+  });
+</script>
 
 
 
