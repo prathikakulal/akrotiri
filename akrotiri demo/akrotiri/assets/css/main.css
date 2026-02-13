@@ -2747,3 +2747,38 @@ textarea {
   }
 
 }
+
+
+
+/* =====================================
+   FIX STANDARD SECTION SIDE SPACING
+===================================== */
+
+@media (max-width: 600px) {
+
+  /* Small screen padding for Standard */
+  #stand .wrap {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  #stand .section {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  /* Ensure standard cards never touch edge */
+  #stand .card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Extra safety */
+  #stand .grid {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+}
+
