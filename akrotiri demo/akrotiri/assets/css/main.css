@@ -1376,7 +1376,7 @@ body::before {
     font-size: 18px;
 }
 
-.pillList {
+/* .pillList {
     margin-top: 14px;
     display: flex;
     flex-wrap: wrap;
@@ -1401,6 +1401,40 @@ body::before {
     border-radius: 999px;
     background: linear-gradient(180deg, var(--gold), var(--saffron));
     box-shadow: 0 0 0 6px rgba(198, 122, 20, .10);
+} */
+
+.pillList {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* center the whole group */
+    gap: 16px;
+}
+
+/* Equal size pills without changing icon position */
+.pill {
+    width: 260px;              /* same width for all */
+    height: 52px;              /* same height */
+    
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .55);
+    color: rgba(0, 0, 0, .76);
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;       /* keeps icon left */
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.pill .mini {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
 }
 
 .softNote {
