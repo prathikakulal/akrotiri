@@ -1376,45 +1376,19 @@ body::before {
     font-size: 18px;
 }
 
-/* .pillList {
-    margin-top: 14px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.pill {
-    padding: 10px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(0, 0, 0, .10);
-    background: rgba(255, 255, 255, .55);
-    color: rgba(0, 0, 0, .76);
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.pill .mini {
-    width: 9px;
-    height: 9px;
-    border-radius: 999px;
-    background: linear-gradient(180deg, var(--gold), var(--saffron));
-    box-shadow: 0 0 0 6px rgba(198, 122, 20, .10);
-} */
-
+/* 
 .pillList {
     margin-top: 14px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   /* center the whole group */
+    justify-content: center;   
     gap: 16px;
 }
 
-/* Equal size pills without changing icon position */
+
 .pill {
-    width: 260px;              /* same width for all */
-    height: 52px;              /* same height */
+    width: 260px;              
+    height: 52px;              
     
     padding: 10px 16px;
     border-radius: 999px;
@@ -1424,7 +1398,7 @@ body::before {
     font-size: 14px;
 
     display: flex;
-    align-items: center;       /* keeps icon left */
+    align-items: center;       
     gap: 10px;
 
     box-sizing: border-box;
@@ -1435,6 +1409,43 @@ body::before {
     width: 20px;
     height: 20px;
     font-size: 11px;
+} */
+
+
+.pillList {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px; /* smaller gap */
+}
+
+/* Smaller + centered pills */
+.pill {
+    width: 220px;      /* reduced width */
+    height: 46px;      /* reduced height */
+
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, .10);
+    background: rgba(255, 255, 255, .55);
+    color: rgba(0, 0, 0, .76);
+    font-size: 13px;   /* smaller text */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* centers content */
+
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+/* Smaller icon */
+.pill .mini {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    flex-shrink: 0;
 }
 
 .softNote {
